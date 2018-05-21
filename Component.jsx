@@ -1,9 +1,7 @@
 var React = require('react');
-
-// https://reactjs.org/docs/react-without-es6.html
-// ES5 way:
 var createReactClass = require('create-react-class');
 
+// https://reactjs.org/docs/react-without-es6.html
 module.exports = createReactClass({
   handleClick: function() {
     console.log('I WAS CLICKED!');

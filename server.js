@@ -18,11 +18,10 @@ app.use(express.static('public'));
 // ROUTES
 app.get('/', function(req, res) {
   var props = { greeting: 'Hello World!' };
-
+  // https://reactjs.org/docs/react-without-jsx.html
   var html = ReactDOMServer.renderToString(
     React.createElement(Component, props)
   );
-  // console.log(html);
 
   res.send(html);
 });
