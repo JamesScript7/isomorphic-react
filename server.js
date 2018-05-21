@@ -2,20 +2,26 @@ require('babel-register')({
   presets: ['react']
 });
 
+// EXPRESS
 var express = require('express');
 var app = express();
 var PORT = 3000;
 
+// REACT
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
 var Component = require('./Component.jsx');
 
+// MIDDLEWARES
 app.use(express.static('public'));
 
+// ROUTES
 app.get('/', function(req, res) {
   var html = ReactDOMServer.renderToString(
     React.createElement(Component)
-  )
+  );
+  // console.log(html);
+
   res.send(html);
 });
 
