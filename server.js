@@ -17,8 +17,10 @@ app.use(express.static('public'));
 
 // ROUTES
 app.get('/', function(req, res) {
+  var props = { greeting: 'Hello World!' };
+
   var html = ReactDOMServer.renderToString(
-    React.createElement(Component)
+    React.createElement(Component, props)
   );
   // console.log(html);
 

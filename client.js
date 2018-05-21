@@ -2,6 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Component = require('./Component.jsx');
 
+var props = window.PROPS;
 /*
 Warning: render(): Calling ReactDOM.render()
 to hydrate server-rendered markup will stop
@@ -10,5 +11,5 @@ call with ReactDOM.hydrate() if you want React to
 attach to the server HTML.
 */
 ReactDOM.hydrate(
-  React.createElement(Component), document
+  React.createElement(Component, props), document
 );
