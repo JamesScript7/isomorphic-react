@@ -29,7 +29,7 @@ module.exports = createReactClass({
           </nav>
 
           <main>
-            <h1>{this.props.about}</h1>
+            <h1>{this.props.greeting}</h1>
             <p>Welcome to the About page!</p>
             <button onClick={this.handleClick}>Click</button>
           </main>

@@ -21,14 +21,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-// Temp prop storage...
-var props = {
-  greeting: 'Hello World!',
-  about: 'This is the about page!'
- };
-
 // ROUTES
 app.get('/', function(req, res) {
+  var props = {
+    greeting: 'Hello World from the Home page!'
+   };
+
   // Load the props into the component here:
   var homeHTML = ReactDOMServer.renderToString(
     React.createElement(Home, props)
@@ -39,6 +37,10 @@ app.get('/', function(req, res) {
 });
 
 app.get('/about', function(req, res) {
+  var props = {
+    greeting: 'Hello World from the About page!'
+   };
+
   var aboutHTML = ReactDOMServer.renderToString(
     React.createElement(About, props)
   );
