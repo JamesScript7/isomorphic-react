@@ -6,13 +6,13 @@ var createReactClass = require('create-react-class');
 
 module.exports = createReactClass({
   handleClick: function() {
-    console.log('CLICKED in the ABOUT page!');
+    console.log('CLICKED in the ABOUT PAGE!');
   },
   render: function() {
     return (
-      <html>
+      <html lang="en-US">
         <head>
-          <title>Isomorphism - About!</title>
+          <title>About - Isomorphism!</title>
           <link rel="stylesheet" href="styles.css" />
         </head>
 
@@ -23,7 +23,10 @@ module.exports = createReactClass({
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/about">about page</a>
+                <a href="/about">About</a>
+              </li>
+              <li>
+                <a href="/contact">Contact</a>
               </li>
             </ul>
           </nav>

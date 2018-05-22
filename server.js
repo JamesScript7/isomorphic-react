@@ -5,8 +5,9 @@ require('babel-register')({
 // EXPRESS
 var express = require('express');
 var app = express();
-var PORT = 3000;
 var path = require('path');
+var PORT = 3000;
+// Form usage:
 var bodyParser = require('body-parser');
 
 // REACT
@@ -15,6 +16,7 @@ var ReactDOMServer = require('react-dom/server');
 // COMPONENTS
 var Home = require('./components/Home.jsx');
 var About = require('./components/About.jsx');
+var Contact = require('./components/Contact.jsx');
 
 // MIDDLEWARES
 app.use(express.static(path.join(__dirname, 'public')));
@@ -23,6 +25,7 @@ app.set('view engine', 'ejs');
 
 // ROUTES
 app.get('/', function(req, res) {
+  // For example props can come from DB || isomorphic fetch!
   var props = {
     greeting: 'Hello World from the Home page!'
    };
@@ -33,7 +36,7 @@ app.get('/', function(req, res) {
   );
 
   // Home uses a framework and dumps the string there:
-  res.render('index.ejs', { reactOutput: homeHTML });
+  res.render('index', { reactOutput: homeHTML });
 });
 
 app.get('/about', function(req, res) {
@@ -45,9 +48,21 @@ app.get('/about', function(req, res) {
     React.createElement(About, props)
   );
 
-  // About sends a string:
+  // Send HTML
   res.send(aboutHTML);
 });
+
+app.get('/contact', function(req, res) {
+  var props = {
+    greeting: 'Hello World from the Contact page!'
+   };
+
+  var contactHTML = ReactDOMServer.renderToString(
+    React.createElement(Contact, props)
+  );
+
+  res.render('contact', { reactOutput: contactHTML });
+})
 
 // Catch all route
 app.get('*', function(req, res) {
