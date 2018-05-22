@@ -3,25 +3,36 @@
 Skills: React, Express, and Node.
 
 An exploration into isomorphism for faster load times and
-SEO. (Server Side Rendering and Client Side Mounting.)
+SEO. (Server Side Rendering and Client Side Rendering/Mounting.)
 
-Home route:
+Home route (with EJS):
 
-Uses EJS to render the entire html string into the framework.
+Entire component (html string) is injected into the EJS framework.
 
-About route:
+About route (without EJS):
 
-Uses response.send to skip over EJS render and sends result
-of .renderToString().
+Uses response.send to skip over EJS render and sends the
+string html from .renderToString() method.
 
-Contact route:
+Contact route (with EJS, partials):
 
-Uses EJS to render but with partials so you can create components that follow more closely to Reacts modularity.
+Uses EJS partials and injects a React component that follow
+more closely to Reacts modularity.
 
 To get started:
 
-`npm i`
+```
+npm i
+```
 
-and then
+then checkout to server-routing branch
 
-`node server.js`
+```
+git checkout server-routing
+```
+
+then start it!
+
+```
+node server.js
+```
