@@ -16,11 +16,10 @@ module.exports = createReactClass({
           <p>Welcome to the Contact page!</p>
           <button onClick={this.handleClick}>Click</button>
         </main>
-
         <script dangerouslySetInnerHTML={{
             __html: 'window.PROPS=' + JSON.stringify(this.props)
           }} />
-        <script src='contact-bundle.js' />
+        <script src="contact-bundle.js" />
       </div>
     );
   }

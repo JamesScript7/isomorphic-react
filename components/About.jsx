@@ -12,6 +12,7 @@ module.exports = createReactClass({
     return (
       <html lang="en-US">
         <head>
+          <meta charSet="utf-8" />
           <title>About - Isomorphism!</title>
           <link rel="stylesheet" href="styles.css" />
         </head>

@@ -47,6 +47,7 @@ app.get('/about', function(req, res) {
   var aboutHTML = ReactDOMServer.renderToString(
     React.createElement(About, props)
   );
+  aboutHTML = '<!DOCTYPE html>' + aboutHTML
 
   // Send HTML
   res.send(aboutHTML);
