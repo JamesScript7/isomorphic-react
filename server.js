@@ -12,7 +12,7 @@ var bodyParser = require('body-parser');
 // REACT
 var React = require('react');
 var ReactDOMServer = require('react-dom/server');
-// Components
+// COMPONENTS
 var Home = require('./components/Home.jsx');
 var About = require('./components/About.jsx');
 
@@ -49,6 +49,7 @@ app.get('/about', function(req, res) {
   res.send(aboutHTML);
 });
 
+// Catch all route
 app.get('*', function(req, res) {
   res.status(404).send('Not Found!');
 });

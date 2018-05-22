@@ -2,10 +2,12 @@
 
 Skills: React, Express, and Node.
 
-An exploration into isomorphism for SEO and faster load times
-for React (Server side rendering and client side mounting.)
+An exploration into isomorphism for faster load times and
+SEO. (Server Side Rendering and Client Side Mounting.)
 
 To get started:
-npm i
+`npm i`
 
-node server.js
+and then
+
+`node server.js`
