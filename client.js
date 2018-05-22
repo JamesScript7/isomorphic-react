@@ -1,6 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Component = require('./Component.jsx');
+// Components
+var Home = require('./components/Home.jsx');
+// var About = require('./components/About.jsx');
 
 var props = window.PROPS;
 /*
@@ -11,5 +13,5 @@ call with ReactDOM.hydrate() if you want React to
 attach to the server HTML.
 */
 ReactDOM.hydrate(
-  React.createElement(Component, props), document
+  React.createElement(Home, props), document
 );

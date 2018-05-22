@@ -6,25 +6,38 @@ var createReactClass = require('create-react-class');
 
 module.exports = createReactClass({
   handleClick: function() {
-    console.log('I WAS CLICKED!');
+    console.log('CLICKED in the ABOUT page!');
   },
   render: function() {
     return (
       <html>
         <head>
-          <title>Isomorphism!</title>
+          <title>Isomorphism - About!</title>
           <link rel="stylesheet" href="styles.css" />
         </head>
+
         <body>
-          <div>
-            <h1>{this.props.greeting}</h1>
-            <p>Lets explore the great world of Isomorphic React!</p>
+          <nav>
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/about">about page</a>
+              </li>
+            </ul>
+          </nav>
+
+          <main>
+            <h1>{this.props.about}</h1>
+            <p>Welcome to the About page!</p>
             <button onClick={this.handleClick}>Click</button>
-          </div>
+          </main>
+
           <script dangerouslySetInnerHTML={{
               __html: 'window.PROPS=' + JSON.stringify(this.props)
             }} />
-          <script src='bundle.js' />
+          <script src='about-bundle.js' />
         </body>
       </html>
     );
